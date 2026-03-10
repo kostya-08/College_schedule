@@ -14,7 +14,6 @@ from .export import ScheduleExporter
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# ЭТО САМОЕ ГЛАВНОЕ - создание экземпляра приложения
 app = FastAPI(title="College Schedule API")
 
 # Настройка CORS
@@ -25,8 +24,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-# ... остальной код
 
 # Инициализация базы данных
 database.Base.metadata.create_all(bind=database.engine)
